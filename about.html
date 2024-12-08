@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Visualization with YouTube</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        let scene, camera, renderer, sphere, analyser;
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+        async function fetchYouTubeAudio(videoId) {
+            console.log("Fetching audio for video ID:", videoId);
+            console.error("Error: YouTube audio cannot be fetched without a valid backend or proxy for audio extraction.");
+        }
+
+        // Initialize the Three.js scene
+        function initializeScene() {
+            console.log("Initializing Three.js scene...");
+
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+
+            const geometry = new THREE.SphereGeometry(5, 32, 32);
+            const material = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
+            sphere = new THREE.Mesh(geometry, material);
+            scene.add(sphere);
+
+            const light = new THREE.PointLight(0xffffff, 1, 100);
+            light.position.set(10, 10, 10);
+            scene.add(light);
+
+            camera.position.z = 20;
+            animate();
+        }
+
+        // Animate the scene
+        function animate() {
+            requestAnimationFrame(animate);
+
+            if (analyser) {
+                const dataArray = new Uint8Array(analyser.frequencyBinCount);
+                analyser.getByteFrequencyData(dataArray);
+
+                const avgFrequency = dataArray.reduce((a, b) => a + b, 0) / dataArray.length;
+
+                const scale = 1 + avgFrequency / 100;
+                sphere.scale.set(scale, scale, scale);
+            }
+
+            renderer.render(scene, camera);
+        }
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        console.log("Starting visualization setup...");
+        fetchYouTubeAudio("kIAKwJu7COo");
+        initializeScene();
+    </script>
+</body>
+</html>

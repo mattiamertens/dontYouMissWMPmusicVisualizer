@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "requirejs": "^2.3.7",
+    "youtube-audio-stream": "^0.3.61"
+  }
+}

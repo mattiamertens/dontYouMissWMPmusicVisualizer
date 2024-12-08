@@ -1,0 +1,507 @@
+@font-face {
+    font-family: 'Berlin Grotesk';
+    src: url('fonts/BerlinGrotesk-Thin.eot');
+    src: url('fonts/BerlinGrotesk-Thin.eot?#iefix') format('embedded-opentype'),
+        url('fonts/BerlinGrotesk-Thin.woff2') format('woff2'),
+        url('fonts/BerlinGrotesk-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Berlin Grotesk';
+    src: url('fonts/BerlinGrotesk-Light.eot');
+    src: url('fonts/BerlinGrotesk-Light.eot?#iefix') format('embedded-opentype'),
+        url('fonts/BerlinGrotesk-Light.woff2') format('woff2'),
+        url('fonts/BerlinGrotesk-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Berlin Grotesk';
+    src: url('fonts/BerlinGrotesk-Regular.eot');
+    src: url('fonts/BerlinGrotesk-Regular.eot?#iefix') format('embedded-opentype'),
+        url('fonts/BerlinGrotesk-Regular.woff2') format('woff2'),
+        url('fonts/BerlinGrotesk-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Berlin Grotesk';
+    src: url('fonts/BerlinGrotesk-Medium.eot');
+    src: url('fonts/BerlinGrotesk-Medium.eot?#iefix') format('embedded-opentype'),
+        url('fonts/BerlinGrotesk-Medium.woff2') format('woff2'),
+        url('fonts/BerlinGrotesk-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Berlin Grotesk';
+    src: url('fonts/BerlinGrotesk-Bold.eot');
+    src: url('fonts/BerlinGrotesk-Bold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/BerlinGrotesk-Bold.woff2') format('woff2'),
+        url('fonts/BerlinGrotesk-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+body, * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Berlin Grotesk', sans-serif;
+    font-weight: 300;
+    color: white;
+    box-sizing: border-box;
+}
+body{
+    background-color: #EBEBEB;
+}
+a{
+    text-decoration: none;
+}
+#canvas{
+    z-index: -1;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+.exclusion{
+    mix-blend-mode: exclusion;
+}
+.w-100{
+    width: 100%;
+}
+.vh-100{
+    height: 100vh;
+}
+.column{
+    flex-direction: column;
+}
+.flex-sb-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-sb-start {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+.flex-center-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.flex-start-center{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.fixed{
+    position: fixed;
+    left: 0;
+    width: -webkit-fill-available;
+    font-size: 18px;
+    z-index: 100;
+}
+.absolute{
+    position: absolute;
+}
+.bold{
+    font-weight: 500;
+}
+.fixed-padding{
+    padding: 12px 16px;
+}
+.dim{
+    opacity: 0.4;
+    pointer-events: none;
+}
+.footer{
+bottom: 0;
+pointer-events: none;
+}
+.footer div{
+    pointer-events: all;
+}
+.button-tertiary{
+    cursor: pointer;
+}
+.button-tertiary:hover{
+    text-decoration: underline;
+}
+.g-24{
+    gap: 24px;
+}
+
+
+.album-wrapper{
+    height: 100vh;
+    gap: 24px;
+}
+.album-title{
+    font-size: 80px;
+}
+.subtitle{
+    font-size: 32px;
+}
+.cta-wrapper{
+    font-size: 24px;
+}
+.currrently-playing{
+    flex-wrap: wrap;
+}
+.interactive-wrapper{
+    z-index: 101;
+    width: 100vw;
+    height: 100vh;
+}
+.video-wrapper{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+video{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+.contain{
+    object-fit: contain;
+}
+.text{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    font-size: 18px;
+}
+.current-song{
+    padding: 4px 6px;
+    background-color: #ffffff;
+    color: black;
+    border-radius: 3px;
+}
+
+.song-graph{
+    z-index: 10;
+}
+.song{
+    width: 8px;
+    height: 8px;
+    border-radius: 30px;
+    background-color: white;
+}
+
+.single-song{
+    fill: #d9d9d9;
+    r: 6px;
+    mix-blend-mode: exclusion;
+    cursor: pointer;
+}
+.single-song:hover{
+    outline: 1.5px solid #343434;
+    border-radius: 100px;
+    outline-offset: 8px;
+}
+.single-song-safari{
+    fill: #343434
+}
+
+/* WORK */
+.cover{
+    padding: 0 16px;
+    position: relative;
+    max-width: 50%;
+}
+.cover-pic{
+    width: 100%;
+    object-fit: contain;
+}
+.cover-title{
+    padding: inherit;
+}
+
+.album-description-wrapper{
+    padding: 23px 16px 46px;
+    overflow: hidden;
+}
+.description-text{
+    width: 70%;
+    display: flex;
+    font-size: 22px;
+    height: 100%;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
+}
+.description-text::-webkit-scrollbar {
+    display: none;
+  }
+  
+.album-cover-wrapper{
+    display: flex;
+    width: 30%;
+}
+.album-cover-s{
+    width: 100%;
+}
+.currently-playing{
+    flex-wrap: wrap;
+}
+
+.content-wrapper{
+    display: flex;
+    gap: 16px;
+    height: 100%;
+    max-height: 100%;
+}
+
+
+
+
+/* ABOUT */
+.content-wrapper-about{
+    gap: 16px;
+    height: 100%;
+    max-height: 100%;
+    padding-right: 16px;
+}
+.test-wrapper{
+    gap: 24px;
+    padding: 46px 0;
+}
+.test-div{
+    align-items: baseline;
+    padding: 0px 16px 48px;
+    width: 100vw;
+    gap: 16px;
+}
+.about-img{
+    height: 100%;
+    object-fit: contain;
+
+}
+.pic-wrapper{
+    width: 50%;
+    max-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+.info-wrapper{
+    height: 80%;
+    width: 50%;
+    gap: 24px;
+    display: flex;
+}
+.interaction{
+    gap: 12px
+}
+.dots{
+    gap: 8px;
+}
+.cerchio{
+    width: 12px;
+    height: 12px;
+    border-radius: 100px;
+    background-color: white;
+    cursor: pointer;
+}
+.active, .cerchio:hover{
+    outline: 1.5px solid #343434;
+    /* border-radius: 100px; */
+    outline-offset: 8px;
+}
+
+.text-wrapper{
+    display: flex;
+    gap: 44px;
+    flex-grow: 10;
+}
+.bottom-anchor{
+    display: flex;
+    gap: 44px;
+    align-self: stretch;
+}
+.row-title{
+    width: 30%;
+    text-align: start;
+}
+.row-content{
+    width: 70%;
+    text-align: start;
+}
+
+.credits{
+    align-items: baseline;
+    width: 50%;
+}
+.single-credit{
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    margin: 8px 0;
+}
+.name-title{
+    font-size: 2.7rem;
+    font-weight: 500;
+}
+.pulsating-circle{
+    /* box-shadow: 0px 0px 1px 1px #0000001a; */
+    animation: pulsate 3s infinite;
+}
+@keyframes pulsate {
+    0% {
+        transform: scale(0.3);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.5);
+        opacity: 0.1;
+    }
+}
+@keyframes pulse-animation {
+    0% {
+      box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.8);
+    }
+    100% {
+      box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+    }
+}
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1600px){ 
+    .cover-pic{
+        max-height: 90%;
+    }
+}
+@media screen and (max-width: 768px){    
+}
+
+@media screen and (max-width: 576px){
+    .cta-wrapper{
+        padding: 0 32px;
+    }
+    .album-title{
+        font-size: 2.7rem;
+    }
+    
+    /* WORK */
+    .cover-wrapper{
+        flex-direction: column;
+    }
+    .description-text{
+        font-size: 18px;
+    }
+    .cover{
+        max-width: 100%;
+    }
+
+    /* VENERE */
+    .mobile-vid-fix{
+        width: 100% !important;
+        /* height: unset; */
+        object-fit: cover;
+    }
+
+    /* ABOUT */
+    .test-wrapper{
+        gap: 48px;
+        justify-content: start;
+        padding: 46px 16px;
+    }
+    .content-wrapper{
+        flex-direction: column;
+        justify-content: start;
+        position: relative;
+        width: 100vw;
+        height: 100%;
+        padding: 0;
+    }
+    .content-wrapper-about{
+        padding: 0;
+        flex-direction: column;
+        justify-content: start;
+        position: relative;
+        width: 100vw;
+        height: 100%;
+        padding: 0;
+    }
+
+    .pic-wrapper{
+        width: 100%;
+        min-height: 50%;
+        max-height: calc(50% - 24px);
+        position: relative;
+        overflow: visible;
+        align-items: start;
+    }
+    .about-img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    .info-wrapper{
+        width: 100%;
+        height: calc(50% - 24px);
+        position: relative;
+        padding: 0 16px;
+    }
+    .text-wrapper{
+        /* max-height: 240px;
+        height: 240px; */
+        flex-grow: 1;
+        flex-shrink: 1;
+        max-height: 100%;
+        overflow-y: auto;
+    }
+    .bottom-anchor{
+        /* max-height: 100%; */
+        height: 100%;
+    }
+    .bio{
+        height: 100%;
+    }
+    .bio-text{
+        height: 100%;
+    }
+    .test-div{
+        flex-direction: column;
+        width: 100vw;
+    }
+    .credits{
+        width: 100%;
+    }
+
+}
+
+
+/* SAFARI FIX */
+@supports (-webkit-touch-callout: none) {
+   
+    .single-song{
+        fill: #343434;
+    }
+    .active{
+        fill: #ffffff;
+    }
+}
