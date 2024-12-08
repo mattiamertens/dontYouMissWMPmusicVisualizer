@@ -246,7 +246,7 @@ $('.muter').on('click', function(){
 
 
 // function videoFetcher() {
-//     fetch("https://www.googleapis.com/youtube/v3/videos?id=kIAKwJu7COo&key=AIzaSyA_AUzrqg1xqpbQikOmtWIUIciEUSd7wuA&part=snippet")
+//     fetch("https://www.googleapis.com/youtube/v3/videos?id=kIAKwJu7COo&key=blank")
 //         .then((response) => response.json())
 //         .then((json) => {
 
