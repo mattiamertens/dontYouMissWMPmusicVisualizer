@@ -189,7 +189,7 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 
 
 const form = document.getElementById('fileUpload');
-const fileInput = document.getElementById('file');
+const fileInput = document.getElementById('audio');
 
 form.addEventListener('submit', function(e){
     e.preventDefault();
@@ -205,10 +205,11 @@ form.addEventListener('submit', function(e){
             function(buffer){
                 sound.setBuffer(buffer);
                 sound.setLoop(true);
+                sound.play();
             },
             function(xhr){
-                var percentage = (xhr.loaded / xhr.total * 100) + '% uploaded';
-                // console.log(percentage);
+                var percentage = Math.floor((xhr.loaded / xhr.total * 100)) + '% uploaded';
+                console.log(percentage);
                 var progress = $('.percentage')[0];
                 progress.innerHTML = percentage;
             },

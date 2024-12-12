@@ -117,6 +117,9 @@ a{
 .bold{
     font-weight: 500;
 }
+.underlined{
+    text-decoration: underline;
+}
 .fixed-padding{
     padding: 12px 16px;
 }
@@ -136,6 +139,9 @@ pointer-events: none;
 }
 .button-tertiary:hover{
     text-decoration: underline;
+}
+.g-8{
+    gap: 8px;
 }
 .g-24{
     gap: 24px;
@@ -505,3 +511,57 @@ video{
         fill: #ffffff;
     }
 }
+form{
+    gap: 16px;
+    width: 100%;
+}
+
+.icon{
+    /* width: 24px;
+    height: 24px; */
+}
+.control-container{
+    width: 70%;
+    position: relative;
+    gap: 16px;
+}
+.step-container{
+    width: 100%;
+    justify-content: flex-start;
+}
+.input{
+    width: 0.1px;
+    height: 0.1px;
+}
+input[type=file] {
+    /* background-color: blue; */
+}
+.disable-input{
+    pointer-events: none;
+    font-size: 12px;
+    opacity: 0.6;
+    flex-shrink: 0;
+}
+.upload-button{
+    padding: 8px 16px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 3px;
+    font-size: 16px;
+    width: 360px;
+    height: 36px;
+    cursor: pointer;
+}
+.play{
+    width: 360px;
+    height: 36px;
+    border: none;
+}
+label {
+    /* padding:8px 16px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 1px solid white; */
+}
+  

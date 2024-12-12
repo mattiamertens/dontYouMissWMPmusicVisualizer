@@ -5,21 +5,12 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="CSS/style.css">    
     <link rel="shortcut icon" href="../assets/pics/favicon.png" type="image/x-icon"> 
-    <title>Sound Sculpting</title>
+    <title>Don't You Miss WMP music Visualizer</title>
 
 </head>
 <body>
     <div class="navbar flex-sb-center fixed fixed-padding exclusion">
         <div class="home "><a href="../index.html" class="bold button-tertiary">Sound Sculpting</a></div>
-        <div class="muter bold flex-center-center"> 
-            <div class="muter-text bold button-tertiary">sound on</div>
-            <!-- <div class="line_viz">-----</div> -->
-        </div>
-    </div>
-    
-    <div class="footer flex-sb-center fixed fixed-padding exclusion">
-        <div class="work button-tertiary bold"><a href="../work.html" class="bold button-tertiary">work</a></div>
-        <div class="about button-tertiary bold"><a href="../about.html" class="bold button-tertiary"> about </a></div>
     </div>
 
     <div class="interactive-wrapper">
@@ -27,15 +18,29 @@
         <div class="album-wrapper flex-center-center column">
             <div class="album-title exclusion flex-center-center">NO CHURCH IN THE WILD</div>
             <div class="cta-wrapper flex-center-center exclusion column">
-                Interact with a dot to hear the track play
                 <div class="currently-playing flex-center-center">Currently playing:&nbsp; <div class="current-song">nothing</div></div>
-                <button class="play">PLAY</button>
             </div>
-            <form action="" id="fileUpload" class="exclusion">
-                <input type="file" id="file" name="file" accept="audio/*">
-                <label for="filqe" class="upload-button">Upload a song</label>
-                <button type="submit">UPLOAD</button>
-            </form>
+
+
+
+            <div class="control-container flex-sb-start column">
+                <form action="" id="fileUpload" class="flex-center-center column">
+                    <input type="file" id="audio" name="audio" accept="audio/*" class="input">
+
+                    <div class="flex-center-center g-8 step-container">
+                        <label for="audio" class="upload-button flex-center-center g-8 input-label"> <img class="icon" src="assets/icons/upload.svg"></img> Upload an audio file</label>
+                        <label for="audio" class="input-label disable-input">1. Upload a file containing audio</label>
+                    </div>
+                    <div class="flex-center-center g-8 step-container">
+                        <button type="submit" class="upload-button">Analyse track</button>
+                        <div class="disable-input">2. Click to analyse the waveform</div>
+                    </div>
+                </form>
+                <div class="flex-center-center g-8 step-container">
+                    <div class="play underlined upload-button">PAUSE</div>
+                    <div class="disable-input">3. Click to pause</div>
+                </div>
+            </div>
 
             <div class="percentage exclusion"></div>
         </div>
